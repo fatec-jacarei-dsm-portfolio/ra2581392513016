@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Leonardo da Silva Irineu - Full-Stack Developer</title>
+       <style>
+      .download-btn {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          border: none;
+          padding: 12px 24px;
+          border-radius: 50px;
+          font-size: 14px;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+          transition: all 0.3s ease;
+          z-index: 1000;
+      }
+
+      .download-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+      }
+
+      @media print {
+          .download-btn {
+              display: none;
+          }
+          
+          body {
+              background: white;
+              padding: 0;
+              margin: 0;
+          }
+          
+          .container {
+              box-shadow: none;
+              border-radius: 0;
+              max-width: none;
+              min-height: auto;
+              margin: 0;
+              padding: 0;
+              display: block;
+              width: 100%;
+          }
+          
+          .sidebar, .main-content {
+              width: 100%;
+              padding: 20px;
+              break-inside: avoid;
+          }
+          
+          .sidebar {
+              page-break-after: avoid;
+          }
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          line-height: 1.6;
+          color: #333;
+          background: oklch(87% 0 0);
+          min-height: 100vh;
+          padding: 20px;
+      }
+
+      .container {
+          max-width: 1000px;
+          margin: 0 auto;
+          background: white;
+          border-radius: 20px;
+          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 300px 1fr;
+          min-height: 100vh;
+      }
+
+      .sidebar {
+          background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+          color: white;
+          padding: 40px 30px;
+      }
+
+      .profile-section {
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      .profile-img {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          margin: 0 auto 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 48px;
+          font-weight: bold;
+          color: white;
+          border: 4px solid rgba(255,255,255,0.2);
+      }
+
+      .name {
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 8px;
+      }
+
+      .title {
+          font-size: 16px;
+          color: #bdc3c7;
+          margin-bottom: 20px;
+      }
+
+      .contact-info {
+          margin-bottom: 40px;
+      }
+
+      .contact-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+          font-size: 14px;
+      }
+
+      .contact-icon {
+          width: 20px;
+          height: 20px;
+          margin-right: 15px;
+          background: #667eea;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+      }
+
+      .sidebar-section {
+          margin-bottom: 35px;
+      }
+
+      .sidebar-section h3 {
+          font-size: 18px;
+          margin-bottom: 20px;
+          color: #667eea;
+          border-bottom: 2px solid #667eea;
+          padding-bottom: 8px;
+      }
+
+      .skill-item {
+          margin-bottom: 15px;
+      }
+
+      .skill-name {
+          font-size: 14px;
+          margin-bottom: 5px;
+      }
+
+      .skill-bar {
+          width: 100%;
+          height: 6px;
+          background: rgba(255,255,255,0.2);
+          border-radius: 3px;
+          overflow: hidden;
+      }
+
+      .skill-progress {
+          height: 100%;
+          background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+          border-radius: 3px;
+      }
+
+      .main-content {
+          padding: 50px 40px;
+      }
+
+      .header {
+          margin-bottom: 50px;
+      }
+
+      .main-title {
+          font-size: 36px;
+          font-weight: 700;
+          color: #2c3e50;
+          margin-bottom: 15px;
+      }
+
+      .subtitle {
+          font-size: 18px;
+          color: #7f8c8d;
+          margin-bottom: 25px;
+      }
+
+      .summary {
+          font-size: 16px;
+          line-height: 1.8;
+          color: #555;
+          background: #f8f9fa;
+          padding: 25px;
+          border-radius: 10px;
+          border-left: 4px solid #667eea;
+      }
+
+      .section {
+          margin-bottom: 50px;
+          page-break-inside: avoid;
+      }
+
+      .section-title {
+          font-size: 24px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 30px;
+          display: flex;
+          align-items: center;
+      }
+
+      .section-icon {
+          width: 30px;
+          height: 30px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 50%;
+          margin-right: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 14px;
+      }
+
+      .timeline-item {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 30px;
+          border-left: 2px solid #e9ecef;
+          page-break-inside: avoid;
+      }
+
+      .timeline-item::before {
+          content: '';
+          position: absolute;
+          left: -6px;
+          top: 0;
+          width: 12px;
+          height: 12px;
+          background: #667eea;
+          border-radius: 50%;
+      }
+
+      .timeline-date {
+          font-size: 14px;
+          color: #667eea;
+          font-weight: 600;
+          margin-bottom: 5px;
+      }
+
+      .timeline-title {
+          font-size: 18px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 5px;
+      }
+
+      .timeline-company {
+          font-size: 16px;
+          color: #7f8c8d;
+          margin-bottom: 10px;
+      }
+
+      .timeline-description {
+          color: #555;
+          line-height: 1.6;
+      }
+
+      .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 25px;
+      }
+
+      .project-card {
+          background: white;
+          border: 1px solid #e9ecef;
+          border-radius: 12px;
+          padding: 25px;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+          page-break-inside: avoid;
+      }
+
+      .project-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+
+      .project-title {
+          font-size: 18px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 10px;
+      }
+
+      .project-tech {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-bottom: 15px;
+      }
+
+      .tech-tag {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 12px;
+          font-weight: 500;
+      }
+
+      .project-link {
+          display: inline-block;
+          color: #667eea;
+          text-decoration: none;
+          font-weight: 500;
+          margin-top: 10px;
+      }
+
+      .project-link:hover {
+          text-decoration: underline;
+      }
+
+      .certifications-list {
+          display: grid;
+          gap: 20px;
+      }
+
+      .cert-item {
+          background: #f8f9fa;
+          padding: 20px;
+          border-radius: 10px;
+          border-left: 4px solid #667eea;
+          page-break-inside: avoid;
+      }
+
+      .cert-title {
+          font-size: 16px;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 5px;
+      }
+
+      .cert-issuer {
+          color: #7f8c8d;
+          font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+          .container {
+              grid-template-columns: 1fr;
+              margin: 10px;
+          }
+          
+          .sidebar {
+              padding: 30px 20px;
+          }
+          
+          .main-content {
+              padding: 30px 20px;
+          }
+          
+          .main-title {
+              font-size: 28px;
+          }
+      }
+
+      .languages-list {
+          list-style: none;
+      }
+
+      .languages-list li {
+          margin-bottom: 10px;
+          font-size: 14px;
+      }
+
+      .languages-list li strong {
+          color: #667eea;
+      }
+  </style>
+   </head>
+   <body>
+       <a href="Leonardo_Curricullum.pdf">
+           <button class="download-btn" onclick="downloadPDF()">
+               📄 Download PDF
+           </button>
+       </a>
+
+       <div class="container" id="pdf-content">
+           <aside class="sidebar">
+               <div class="profile-section">
+                   <img src="./eu.jpeg" class="profile-img" alt>
+                   <h1 class="name">Leonardo da Silva Irineu</h1>
+                   <p class="title">Full-Stack Developer</p>
+               </div>
+
+               <div class="contact-info">
+                   <div class="contact-item">
+                       <div class="contact-icon">📱</div>
+                       <span>(12) 99246-0071</span>
+                   </div>
+                   <div class="contact-item">
+                       <div class="contact-icon">✉️</div>
+                       <span>leonardo1692004@gmail.com</span>
+                   </div>
+                   <div class="contact-item">
+                       <div class="contact-icon">📍</div>
+                       <span>São José dos Campos, SP</span>
+                   </div>
+                   <div class="contact-item">
+                       <div class="contact-icon">🔗</div>
+                       <a href="https://github.com/Leo-Slv" style="text-decoration: none; color: inherit;" target="_blank">
+                           <span>github.com/Leo-Slv</span>
+                       </a>
+                   </div>
+               </div>
+
+               <div class="sidebar-section">
+                   <h3>Technical Skills</h3>
+                   <div class="skill-item">
+                       <div class="skill-name">Java & Spring Framework</div>
+                       <div class="skill-bar">
+                           <div class="skill-progress"
+                               style="width: 85%"></div>
+                       </div>
+                   </div>
+                   <div class="skill-item">
+                       <div class="skill-name">TypeScript & Node.js</div>
+                       <div class="skill-bar">
+                           <div class="skill-progress"
+                               style="width: 80%"></div>
+                       </div>
+                   </div>
+                   <div class="skill-item">
+                       <div class="skill-name">Angular & React</div>
+                       <div class="skill-bar">
+                           <div class="skill-progress"
+                               style="width: 80%"></div>
+                       </div>
+                   </div>
+                   <div class="skill-item">
+                       <div class="skill-name">MySQL & PostgreSQL</div>
+                       <div class="skill-bar">
+                           <div class="skill-progress"
+                               style="width: 75%"></div>
+                       </div>
+                   </div>
+                   <div class="skill-item">
+                       <div class="skill-name">Git & GitHub</div>
+                       <div class="skill-bar">
+                           <div class="skill-progress"
+                               style="width: 90%"></div>
+                       </div>
+                   </div>
+                   <div class="skill-item">
+                       <div class="skill-name">REST APIs & Docker</div>
+                       <div class="skill-bar">
+                           <div class="skill-progress"
+                               style="width: 80%"></div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="sidebar-section">
+                   <h3>Languages</h3>
+                   <ul class="languages-list">
+                       <li><strong>Portuguese:</strong> Native</li>
+                       <li><strong>English:</strong> Intermediate</li>
+                   </ul>
+               </div>
+
+               <div class="sidebar-section">
+                   <h3>Methodologies</h3>
+                   <ul class="languages-list">
+                       <li>• Scrum</li>
+                       <li>• SOLID Principles</li>
+                       <li>• Domain-Driven Design</li>
+                   </ul>
+               </div>
+           </aside>
+
+           <main class="main-content">
+               <header class="header">
+                   <h1 class="main-title">Full-Stack Developer</h1>
+                   
+                    <a href="https://portfolio-git-master-leonardos-projects-ca06eb83.vercel.app/" target="_blank">
+                       <h2 class="section-title">
+                           <div class="section-icon">📓</div>
+                           Portfolio
+                       </h2>
+                   </a>
+                   <p class="subtitle">Spring Framework, TypeScript, Node, RESTful APIs, Angular & React</p>
+                   <div class="summary">
+                       Passionate Full-Stack developer focused on creating robust and scalable solutions. Graduated with a Technical degree in Systems Development and currently pursuing a Technology degree in Multiplatform Software Development. I have knowledge in Java, Spring Framework, TypeScript, Node, Angular, React and modern software architectures. I seek to contribute with innovative teams in the development of high-quality enterprise systems.
+                   </div>
+               </header>
+
+               <section class="section">
+                   <h2 class="section-title">
+                       <div class="section-icon">🎓</div>
+                       Education
+                   </h2>
+                   <div class="timeline-item">
+                       <div class="timeline-date">December 2024 - Completed</div>
+                       <div class="timeline-title">Technical in Systems Analysis and Development</div>
+                       <div class="timeline-company">ETEC Prof. Ilza Nascimento Pintus</div>
+                       <div class="timeline-description">
+                           Complete technical training in systems development, with focus on programming logic, databases and agile methodologies.
+                       </div>
+                   </div>
+                   <div class="timeline-item">
+                       <div class="timeline-date">December 2027 - In Progress</div>
+                       <div class="timeline-title">Technology in Multiplatform Software Development</div>
+                       <div class="timeline-company">FATEC Prof. Francisco Moura</div>
+                       <div class="timeline-description">
+                           Higher education course focused on multiplatform development, software architecture and modern development technologies.
+                       </div>
+                   </div>
+               </section>
+
+               <section class="section">
+                   <h2 class="section-title">
+                       <div class="section-icon">💼</div>
+                       Professional Experience
+                   </h2>
+                   <div class="timeline-item">
+                       <div class="timeline-date">2024 - Current</div>
+                       <div class="timeline-title">Junior Developer (Seeking Opportunities)</div>
+                       <div class="timeline-company">Technology Market</div>
+                       <div class="timeline-description">
+                           Developing personal and academic projects to improve Full-Stack development skills. Focused on Java, Spring Framework, TypeScript, Node, Angular, React and microservices architectures. Actively participating in developer communities and contributing to open source projects.
+                       </div>
+                   </div>
+               </section>
+
+               <section class="section">
+                   <h2 class="section-title">
+                       <div class="section-icon">🚀</div>
+                       Featured Projects
+                   </h2>
+                   <div class="projects-grid">
+                       <div class="project-card">
+                           <div class="project-title">PORTFOLIO</div>
+                           <div class="project-tech">
+                               <span class="tech-tag">ANGULAR</span>
+                               <span class="tech-tag">TYPESCRIPT</span>
+                               <span class="tech-tag">TAILWIND</span>
+                           </div>
+                           <p>Personal portfolio developed with Angular and TypeScript, showcasing projects, skills and professional experiences. Modern and responsive interface with smooth animations and glassmorphism design.</p>
+                           
+                               href="https://portfolio-git-master-leonardos-projects-ca06eb83.vercel.app/"
+                               class="project-link" target="_blank">View on GitHub →</a>
+                       </div>
+                       <div class="project-card">
+                           <div class="project-title">SHOP API</div>
+                           <div class="project-tech">
+                               <span class="tech-tag">Java</span>
+                               <span class="tech-tag">Spring Framework</span>
+                               <span class="tech-tag">Hibernate</span>
+                               <span class="tech-tag">JUnit</span>
+                               <span class="tech-tag">MySQL</span>
+                           </div>
+                           <p>Complete RESTful API for e-commerce with authentication, product management, shopping cart and order processing. Implementation of unit tests and OpenAPI documentation.</p>
+                           <a href="https://github.com/Leo-Slv/SHOP_API"
+                               class="project-link" target="_blank">View on GitHub →</a>
+                       </div>
+                       <div class="project-card">
+                           <div class="project-title">ErrorSquad Server</div>
+                           <div class="project-tech">
+                               <span class="tech-tag">Node.js</span>
+                               <span class="tech-tag">Express.js</span>
+                               <span class="tech-tag">JavaScript</span>
+                               <span class="tech-tag">PostgreSQL</span>
+                           </div>
+                           <p>Backend server for team project management application. Implementation of WebSockets for real-time communication and third-party services integration.</p>
+                           
+                               href="https://github.com/ErrorSquad-ABP/ErrorSquad-Server"
+                               class="project-link" target="_blank">View on GitHub →</a>
+                       </div>
+                   </div>
+               </section>
+
+               <section class="section">
+                   <h2 class="section-title">
+                       <div class="section-icon">🏆</div>
+                       Certifications & Courses
+                   </h2>
+                   <div class="certifications-list">
+                       <div class="cert-item">
+                           <div class="cert-title">English Course - Intermediate Level</div>
+                           <div class="cert-issuer">ICBEU • January 2017 - December 2019</div>
+                       </div>
+                       <div class="cert-item">
+                           <div class="cert-title">Spring Boot</div>
+                           <div class="cert-issuer">Self-taught • 2024</div>
+                       </div>
+                       <div class="cert-item">
+                           <div class="cert-title">TypeScript</div>
+                           <div class="cert-issuer">Self-taught • 2025</div>
+                       </div>
+                       <div class="cert-item">
+                           <div class="cert-title">Angular</div>
+                           <div class="cert-issuer">Self-taught • 2025</div>
+                       </div>
+                       <div class="cert-item">
+                           <div class="cert-title">Linux Terminal Fundamentals</div>
+                           <div class="cert-issuer">Self-taught • 2024</div>
+                       </div>
+                   </div>
+               </section>
+
+               <section class="section">
+                   <h2 class="section-title">
+                       <div class="section-icon">⚡</div>
+                       Additional Skills
+                   </h2>
+                   <div
+                       style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                       <div class="cert-item">
+                           <div class="cert-title">Software Architecture</div>
+                           <div class="cert-issuer">Domain-Driven Design, SOLID, Clean Architecture</div>
+                       </div>
+                       <div class="cert-item">
+                           <div class="cert-title">DevOps & Cloud</div>
+                           <div class="cert-issuer">Google Cloud, Docker, CI/CD</div>
+                       </div>
+                       <div class="cert-item">
+                           <div class="cert-title">Soft Skills</div>
+                           <div class="cert-issuer">Teamwork, Communication, Problem Solving</div>
+                       </div>
+                   </div>
+               </section>
+           </main>
+       </div>
+
+       <script
+           src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+       <script
+           src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+   </body>
+</html>
