@@ -1,0 +1,148 @@
+.container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            cursor: pointer;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7f5af0 0%, #2cb67d 100%);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #7f5af0 0%, #2cb67d 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(127, 90, 240, 0.4);
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #e1e1e6;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+
+        .contact-description {
+            font-size: 0.9rem;
+            color: #a8a8b3;
+            line-height: 1.6;
+        }
+
+        .contact-link {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Cores específicas para cada tipo de contato */
+        .email-card::before {
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .email-card .contact-icon {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .email-card:hover .contact-icon {
+            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.4);
+        }
+
+        .phone-card::before {
+            background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .phone-card .contact-icon {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+
+        .phone-card:hover .contact-icon {
+            box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+        }
+
+        .linkedin-card::before {
+            background: linear-gradient(90deg, #0077b5 0%, #005885 100%);
+        }
+
+        .linkedin-card .contact-icon {
+            background: linear-gradient(135deg, #0077b5 0%, #005885 100%);
+        }
+
+        .linkedin-card:hover .contact-icon {
+            box-shadow: 0 10px 30px rgba(0, 119, 181, 0.4);
+        }
+
+        .github-card::before {
+            background: linear-gradient(90deg, #333333 0%, #24292e 100%);
+        }
+
+        .github-card .contact-icon {
+            background: linear-gradient(135deg, #333333 0%, #24292e 100%);
+        }
+
+        .github-card:hover .contact-icon {
+            box-shadow: 0 10px 30px rgba(51, 51, 51, 0.4);
+        }

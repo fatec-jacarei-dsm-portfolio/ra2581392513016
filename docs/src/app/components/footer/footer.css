@@ -1,0 +1,55 @@
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Classes para aplicar diferentes animações de flutuação */
+.float-1 {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.border-nav {
+    position: relative; /* Isso é necessário para o pseudo-elemento ser posicionado corretamente */
+}
+
+.border-nav::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Mude de top: 0 para bottom: 0 */
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #7f5af0 0%, #2cb67d 100%);
+}
