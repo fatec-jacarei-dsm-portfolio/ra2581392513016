@@ -1,0 +1,360 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'SpecialGothic';
+    src: url('../public/fonts/SpecialGothicCondensedOne-Regular.ttf')
+  }
+
+    html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+  overflow: auto; /* Habilita o scroll */
+  scrollbar-width: none; /* Oculta a barra de rolagem em Firefox */
+  overflow-x: hidden; /* Evita o espaço lateral */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Oculta a barra de rolagem */
+}
+
+ 
+body {
+  background-image: radial-gradient(circle at 99% 33%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 37%, transparent 37%, transparent 100%), 
+    radial-gradient(circle at 46% 16%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 43%, transparent 43%, transparent 100%), 
+    radial-gradient(circle at 99% 25%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 22%, transparent 22%, transparent 100%), 
+    radial-gradient(circle at 57% 88%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 86%, transparent 86%, transparent 100%), 
+    radial-gradient(circle at 82% 78%, hsla(235, 0%, 48%, 0.03) 0%, hsla(235, 0%, 48%, 0.03) 22%, transparent 22%, transparent 100%), 
+    linear-gradient(90deg, rgb(22, 22, 26), rgb(22, 22, 26));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+  .main-font{
+    font-family: "SpecialGothic";
+  }
+
+  .nav-title{
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out; 
+  }
+  .nav-title:hover{
+    transform: scale(1.2);
+    color: #fffffe;
+  }
+
+  .hover-effect {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .hover-effect::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7f5af0;
+    transition: width 0.3s ease;
+  }
+
+  .hover-effect:hover::after {
+    width: 100%;
+  }
+
+  .headline{
+    color: #fffffe;
+  }
+
+  .paragraph{
+    color: #94a1b2;
+  }
+
+  .main-color{
+    color: #7f5af0;
+  }
+
+  .main-font{
+    font-family: "SpecialGothic";
+  }
+
+  /* Animações de Fade-in com movimento - Suavizadas */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animação de máquina de escrever melhorada */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #667eea;
+  }
+}
+
+/* Classes para aplicar as animações - Durações ajustadas */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.fade-in-scale {
+  animation: fadeInScale 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Delays ajustados para melhor sequência */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
+
+/* Efeito máquina de escrever ajustado */
+.typewriter-line1 {
+  overflow: hidden;
+  border-right: 2px solid #667eea;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typewriter 1.8s steps(30, end) 0.3s forwards, 
+    blinkCursor 0.8s step-end infinite;
+  width: 0;
+  opacity: 1;
+}
+
+.typewriter-line2 {
+  overflow: hidden;
+  border-right: 2px solid #667eea;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+    typewriter 1.8s steps(30, end) 2.1s forwards, 
+    blinkCursor 0.8s step-end infinite 2.1s;
+  width: 0;
+  opacity: 1;
+}
+
+.typewriter-finished {
+  border-right: none;
+  animation: none;
+}
+
+.typewriter-description {
+  overflow: hidden;
+  white-space: normal;
+  animation: fadeInUp 0.8s ease-out 3.5s forwards;
+  opacity: 0;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes floatFast {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Classes para aplicar diferentes animações de flutuação */
+.float-1 {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.float-2 {
+  animation: floatReverse 2.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.float-3 {
+  animation: float 3.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.float-4 {
+  animation: floatSlow 2.8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.float-5 {
+  animation: floatFast 3.2s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Melhorar o efeito hover para trabalhar bem com a animação */
+.icon-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-hover:hover {
+  transform: scale(1.1) translateY(-5px) !important;
+  filter: brightness(1.2);
+  animation-play-state: paused; /* Pausa a animação durante o hover */
+}
+
+/* Para dispositivos móveis, reduzir a intensidade da animação */
+@media (max-width: 768px) {
+  .float-1, .float-2, .float-3, .float-4, .float-5 {
+    animation-duration: 2.5s;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+  
+  @keyframes floatReverse {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+}
+
+/* Adicionar um sutil efeito de brilho aos ícones */
+.icon-hover img {
+  transition: all 0.3s ease;
+}
+
+.icon-hover:hover img {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* Garante que as animações possam repetir */
+.fade-in-up, .fade-in-left, .fade-in-right, .fade-in-down, .fade-in-scale {
+  animation-fill-mode: both;
+}
+
+.typewriter-line1, .typewriter-line2 {
+  animation-fill-mode: forwards;
+}
+
+/* Mantenha todas as outras regras CSS que você já tem */
+[class*="fade-in"] {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+  

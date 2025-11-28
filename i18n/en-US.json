@@ -1,0 +1,80 @@
+{
+  "HOME": {
+    "GREETING": "Hello, my name is Leonardo",
+    "TITLE_1": "Full-Stack Developer",
+    "TITLE_2": "Java and Node.js",
+    "DESCRIPTION": "I'm a Full-Stack developer passionate about creating solutions that not only meet functional requirements but also deliver exceptional performance and build user trust through stable and secure experiences.",
+    "RESUME_BUTTON": "Curriculum",
+    "GITHUB_BUTTON": "GitHub",
+    "PATH": "./assets/Curriculum_Leonardo_Irineu_EN.pdf"
+  },
+  "NAVBAR": {
+    "MAIN-LANGUAGE": "English (US)",
+    "PORTUGUESE": "Portuguese (BR)",
+    "ENGLISH": "English (US)",
+    "HOME": "Home",
+    "ABOUT": "About",
+    "PROJECTS": "Projects",
+    "CONTACTS": "Contacts"
+  },
+  "ABOUT": {
+    "TITLE": "About",
+    "SUBTITLE": "Full-Stack Developer",
+    "TITLE_2": "My Value",
+    "DESCRIPTION_1": "At the age of 20, I'm a full-stack developer with a passion for creating robust and scalable solutions. With experience in ASP.NET, Spring Boot and TypeScript, I develop APIs and systems that prioritize performance and security, applying Domain-Driven Design (DDD) concepts to create well-structured architectures aligned with business needs.",
+    "DESCRIPTION_2": "I also have knowledge of Next.JS e Angular, which allows me to have a complete view of full-stack development and collaborate effectively with front-end teams. I'm looking for opportunities that allow me to apply my technical knowledge while continuing to evolve as a developer, contributing to innovative and impactful projects.",
+    "DESCRIPTION_3": "Currently working as a Software Development Intern at ACTI since September 2025, where I develop and maintain web applications using ASP.NET, Next.js, and SQL Server. My role focuses on implementing clean architecture principles, optimizing database operations, and collaborating with the development team to deliver scalable and maintainable solutions."
+  },
+  "EDUCATION": {
+    "TITLE": "Education",
+    "DEGREE_1": "Multiplatform Software Development",
+    "DEGREE_2": "Systems Development Technician",
+    "DEGREE_3": "Intermediate English",
+    "SCHOOL_1": "FATEC - Technology College",
+    "SCHOOL_2": "ETEC - State Technical School",
+    "SCHOOL_3": "Icbeu",
+    "DESCRIPTION_1": "Technology degree course focused on software development, programming, databases, software engineering and project management.",
+    "DESCRIPTION_2": "Technical training in programming, web development, databases and computer networks.",
+    "DESCRIPTION_3": "I studied English for 3 years of my life, reaching an Intermediate level of English and being able to communicate.",
+    "STATUS_1": "In progress",
+    "STATUS_2": "Completed",
+    "STATUS_3": "Certificate"
+  },
+  "PROJECTS": {
+    "TITLE": "Projects",
+    "MY": "Personal Projects",
+    "STUDENT": "Academic Projects",
+    "PROFESSIONAL": "Professional Projects",
+    "CARD_TITLE_1": "ACTi Case",
+    "CARD_TITLE_2": "Shop API",
+    "CARD_TITLE_3": "Personal Portfolio",
+    "CARD_TITLE_4": "ErrorSquad Server",
+    "CARD_TITLE_5": "Agile Tracker Server",
+    "CARD_TITLE_6": "Limnological Project",
+    "CARD_TITLE_7": "Web POS",
+    "DESCRIPTION_1": "Robust API developed with ASP.NET and Angular, implementing Domain-Driven Design (DDD) for project management. It uses SQL Server as its database and apply clean architecture concepts to ensure organized and sustainable code.",
+    "DESCRIPTION_2": "REST API being developed for e-commerce in Spring Boot with Java. It implements product catalog, shopping cart, user management and order processing functionalities.",
+    "DESCRIPTION_3": "Personal portfolio developed with Angular and TypeScript, presenting projects, skills and professional experience. Modern, responsive interface with smooth animations and glassmorphism design.",
+    "DESCRIPTION_4": "Robust API developed with Node.js and TypeScript, implementing Domain-Driven Design (DDD) for project management. It uses PostgreSQL as its database and offers JWT authentication for security.",
+    "DESCRIPTION_5": "Web platform for integrated project management, combining Scrum and Kanban with analytical dashboards, documentation, and collaborative diagrams. Built with ASP.NET, Next.js, and PostgreSQL, applying DDD to ensure modularity, clarity, and scalability.",
+    "DESCRIPTION_6": "Web project focused on limnological monitoring, developed with Vue.js and TypeScript. The application allows visualization and analysis of environmental data, offering interactive graphs and detailed reports for researchers and professionals in the field.",
+    "DESCRIPTION_7": "Professional Web POS system built with ASP.NET, Next.js, and MySQL, designed to modernize and accelerate commercial operations. The platform features a dynamic dashboard for tracking sales performance, customer rankings, orders, and real-time operational indicators. It includes customizable reports, smart product lookup, price management, and tools tailored for sales teams. Its architecture prioritizes performance, security, and scalability, delivering a smooth and reliable experience for enterprise environments."
+  },
+  "CONTACTS": {
+    "TITLE": "Contacts",
+    "CARD_TITLE_1": "Email",
+    "CARD_TITLE_2": "Telephone",
+    "CARD_TITLE_3": "Linkedin",
+    "CARD_TITLE_4": "GitHub",
+    "DESCRIPTION_1": "Contact us by email to discuss projects, professional opportunities or collaborations.",
+    "DESCRIPTION_2": "I'm available for quick conversations and to discuss projects. Please contact me via WhatsApp.",
+    "DESCRIPTION_3": "Connect with me on LinkedIn to follow my professional career and exchange experiences.",
+    "DESCRIPTION_4": "Explore my repositories and open source projects. Contributions and collaborations are always welcome!"
+  },
+  "FOOTER": {
+    "TEXT": "© 2025 Leonardo da Silva Irineu. All rights reserved."
+  },
+  "SVG": {
+    "LANGUAGE": "./assets/US.svg"
+  }
+}

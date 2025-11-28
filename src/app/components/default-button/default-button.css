@@ -1,0 +1,12 @@
+.button-text{
+    color: #fffffe;
+  }
+
+  .button-hover{
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out; 
+  }
+
+  .button-hover:hover{
+    transform: scale(1.05);
+    color: #fffffe;
+  }
