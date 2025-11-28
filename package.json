@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:Portfolio": "node dist/Portfolio/server/server.mjs",
+    "deploy": "ng build --configuration production && node scripts/create-404.js",
     "deploy:gh": "ng build --configuration production && node scripts/deploy-gh.js"
   },
   "private": true,

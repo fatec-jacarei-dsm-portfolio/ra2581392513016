@@ -3,7 +3,7 @@ const path = require("path");
 
 // pastas
 const dist = path.join(__dirname, "..", "dist", "Portfolio");
-const docs = path.join(__dirname, "..", "docs");
+const docs = path.join(__dirname, "..", "docs","browser");
 
 // limpar docs
 if (fs.existsSync(docs)) {
